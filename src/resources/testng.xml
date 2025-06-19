@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="D:/java Course/DemoFrameWorkProject">
+        <classes>
+            <class name="com.qa.testcases.Register">
+                <methods>
+                    <include name="verifyRegisterwithValidCreds"/>
+                    <include name="verifyRegisterwithDuplicateEmail"/>
+                    <include name="verifyRegisterWithOutFields"/>
+                </methods>
+            </class>
+            <class name="com.qa.testcases.Login">
+             <methods>
+                <include name="verifyLoginPageWithInValidCreds"/>
+                <include name="verifyLoginWithValidCreds"/>
+                <include name="VerifyLoginWithInvalidEmailValidPassword"/>
+                <include name="VerifyLoginWithValidEmailInValidPassword"/>
+                <include name="VerifyLoginWithoutProvidingDetails"/>
+             </methods>
+            </class>
+
+            <class name="com.qa.testcases.Search">
+                <methods>
+                    <include name="verifySearchBarWithValidContent"/>
+                    <include name="verifySearchWithInvalidContent"/>
+                    <include name="verifySearchWithoutContent"/>
+                </methods>
+            </class>
+        </classes>
+    </test
+    ></suite>
