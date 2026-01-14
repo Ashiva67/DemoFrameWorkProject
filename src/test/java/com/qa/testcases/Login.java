@@ -1,20 +1,13 @@
 package com.qa.testcases;
 
-import COnfigs.Pages.HomePage;
-import COnfigs.Pages.LoginPage;
-import COnfigs.Pages.MyAccountPage;
+import Configs.Pages.HomePage;
+import Configs.Pages.LoginPage;
+import Configs.Pages.MyAccountPage;
 import Utils.Utilities;
 import com.qa.base.BaseClass;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
-import java.time.Duration;
-import java.util.Date;
 
 import static Utils.Utilities.generateEmailWithTimeStamp;
 

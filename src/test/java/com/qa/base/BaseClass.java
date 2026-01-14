@@ -17,7 +17,8 @@ public class BaseClass {
     public Properties testDataProp;
     public void loadPropertiesFile(){
         prop=new Properties();
-        File propFile=new File(System.getProperty("user.dir")+"\\src\\main\\java\\COnfigs\\Config.properties");
+        File propFile=new File(System.getProperty("user.dir")+"\\src\\main\\java\\Configs\\Config.properties");
+//        String browserName=System.getProperty("browser")!=null?System.getProperty("browser"):prop.getProperty("browser");
         try{
             FileInputStream fis=new FileInputStream(propFile);
             prop.load(fis);
@@ -25,7 +26,7 @@ public class BaseClass {
             e.printStackTrace();
         }
         testDataProp=new Properties();
-        File propFile1=new File(System.getProperty("user.dir")+"\\src\\main\\java\\COnfigs\\TestData.properties");
+        File propFile1=new File(System.getProperty("user.dir")+"\\src\\main\\java\\Configs\\TestData.properties");
         try{
             FileInputStream fis1=new FileInputStream(propFile1);
             testDataProp.load(fis1);
@@ -36,8 +37,7 @@ public class BaseClass {
 
     }
  public WebDriver initializeBrowserApplicationtoUrl(String browserName){
-
-
+       
      if (browserName.equalsIgnoreCase("chrome")){
          driver=new ChromeDriver();
 
