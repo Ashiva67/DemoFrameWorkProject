@@ -1,8 +1,10 @@
 package com.qa.base;
 
 import Utils.Utilities;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -37,10 +39,24 @@ public class BaseClass {
 
     }
  public WebDriver initializeBrowserApplicationtoUrl(String browserName){
-       
+     loadPropertiesFile();
+//     if (browserName.equalsIgnoreCase("chrome")){
+//        ChromeOptions options=new ChromeOptions();
+//         if (browserName.contains("headless")){
+//             options.addArguments("headless");
+//         }
+     String headlessvalue=System.getProperty("headless",prop.getProperty("headless"));
+     boolean isHeadless=headlessvalue.equalsIgnoreCase("true");
      if (browserName.equalsIgnoreCase("chrome")){
-         driver=new ChromeDriver();
+         ChromeOptions options=new ChromeOptions();
+         if (isHeadless){
 
+             options.addArguments("--headless=new");
+             options.addArguments("--window-size=1440,900");
+             options.addArguments("--disable-gpu");
+         }
+         driver=new ChromeDriver(options);
+//         driver.manage().window().setSize(new Dimension(1440,900));
      }else if (browserName.equalsIgnoreCase("firefox")){
          driver =new FirefoxDriver();
      }else if (browserName.equalsIgnoreCase("edge")){
